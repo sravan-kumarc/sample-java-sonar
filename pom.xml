@@ -17,6 +17,9 @@
     <sonar.host.url>${env.SONAR_HOST_URL}</sonar.host.url>
     <sonar.token>${env.SONAR_TOKEN}</sonar.token>
     <sonar.projectKey>sonartest</sonar.projectKey>
+    <sonar.sources>src/main/java</sonar.sources>
+    <sonar.java.source>17</sonar.java.source>
+    <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
     <sonar.scanner.connectionTimeout>60000</sonar.scanner.connectionTimeout>
   </properties>
   
