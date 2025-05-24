@@ -4,25 +4,29 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.example</groupId>
   <artifactId>sample-java-sonar</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-
+  
   <properties>
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
+    <!-- SonarQube properties -->
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    <sonar.token>your-sonarqube-token</sonar.token> <!-- Replace with actual token -->
+    <sonar.projectKey>com.example:sample-java-sonar</sonar.projectKey>
+    <sonar.scanner.connectionTimeout>60000</sonar.scanner.connectionTimeout>
   </properties>
-
+  
   <dependencies>
     <!-- Add your project dependencies here -->
   </dependencies>
-
+  
   <build>
     <plugins>
-      <!-- Compiler plugin to set Java version -->
+      <!-- Compiler plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -32,9 +36,12 @@
           <target>${java.version}</target>
         </configuration>
       </plugin>
-
-      <!-- Optionally include Sonar Maven plugin here (but CLI usage is fine) -->
+      <!-- SonarQube plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.1.0.4751</version>
+      </plugin>
     </plugins>
   </build>
-
 </project>
