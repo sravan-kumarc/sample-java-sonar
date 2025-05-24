@@ -14,9 +14,10 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <!-- SonarQube properties -->
-    <sonar.host.url>http://localhost:9000</sonar.host.url>
-    <sonar.token>your-sonarqube-token</sonar.token> <!-- Replace with actual token -->
-    <sonar.projectKey>com.example:sample-java-sonar</sonar.projectKey>
+    <sonar.host.url>http://3.238.151.176:9000</sonar.host.url>
+    <sonar.host.url>${env.SONAR_HOST_URL}</sonar.host.url>
+    <sonar.token>${env.SONAR_TOKEN}</sonar.token>
+    <sonar.projectKey>com.example:sample</sonar.projectKey>
     <sonar.scanner.connectionTimeout>60000</sonar.scanner.connectionTimeout>
   </properties>
   
