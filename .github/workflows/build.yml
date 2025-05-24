@@ -33,4 +33,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           MAVEN_OPTS: -X # Enable debug logging
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:5.1.0.4751:sonar -Dsonar.projectKey=com.example:sample-java-sonar -Dsonar.projectName=sample-java-sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_TOKEN -Dsonar.scanner.connectionTimeout=60000
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:5.1.0.4751:sonar \
+                -Dsonar.projectKey=sonartest  \
+                -Dsonar.projectName=sonartest \
+                -Dsonar.host.url=$SONAR_HOST_URL \
+                -Dsonar.token=$SONAR_TOKEN \
+                -Dsonar.scanner.connectionTimeout=60000
